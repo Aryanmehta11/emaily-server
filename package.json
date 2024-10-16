@@ -21,6 +21,7 @@
     "nodemon": "^3.1.7",
     "passport": "^0.5.3",
     "passport-google-oauth20": "^2.0.0",
+    "react-stripe-checkout": "^2.6.3",
     "redux-thunk": "^3.1.0"
   }
 }
