@@ -34,7 +34,7 @@ if(process.env.NODE_ENV==="production"){
     //Express will serve up the index.html
     //if it doesnt work up /surveys
     const path=require('path')
-    app.length('*',(req,res)=>{
+    app.get('*',(req,res)=>{
         res.sendFile(path.resolve(__dirname,"client","build","index.html"))
     })
 }
