@@ -1,4 +1,5 @@
 
+
 module.exports={
     googleClientID:process.env.GOOGLE_CLIENT_ID,
     googleClientSecret:process.env.GOOGLE_CLIENT_SECRET,
@@ -6,6 +7,7 @@ module.exports={
     cookieKey:process.env.COOKIE_KEY,
     stripePublishableKey:process.env.STRIPE_PUBLISHABLE_KEY,
     stripeSecretKey:process.env.STRIPE_SECRET_KEY,
-    mailChimpKey:process.env.MAIL_CHIMP_KEY
+    mailChimpKey:process.env.MAIL_CHIMP_KEY,
+    mailChimpServerPrefix:process.env.MAIL_CHIMP_SERVER_PREFIX
 
 }
