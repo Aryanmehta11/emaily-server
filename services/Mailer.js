@@ -1,15 +1,39 @@
-const mailchimp=require('@mailchimp/mailchimp_marketing')
-const keys=require('../config/keys')
+const mailgun = require("mailgun-js");
+const keys = require("../config/keys");
 
 
 class Mailer {
     constructor({subject,recipients},content){
-        // super()
-        // this.subject=subject
-        // this.body=new Helper.Content('text/html',content)
+        this.mailgun=mailgun({
+            apiKey:keys.mailgunKey,
+            domain:keys.mailgunDomain
+        })
+        this.data={
+            from: "am499702@gmail.com",
+            to: this.formatAddresses(recipients),
+            subject: subject,
+            html: content,
+            "o:tracking-clicks": true,
+        }
 
 
     }
+
+    formatAddresses(recipients) {
+        return recipients.map(({ email }) => email).join(",");
+      }
+
+    async send() {
+        return new Promise((resolve, reject) => {
+          this.mailgun.messages().send(this.data, (error, body) => {
+            if (error) {
+              reject(error);
+            } else {
+              resolve(body);
+            }
+          });
+        });
+      }
 
 
 }

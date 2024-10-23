@@ -7,7 +7,7 @@ module.exports={
     cookieKey:process.env.COOKIE_KEY,
     stripePublishableKey:process.env.STRIPE_PUBLISHABLE_KEY,
     stripeSecretKey:process.env.STRIPE_SECRET_KEY,
-    mailChimpKey:process.env.MAIL_CHIMP_KEY,
-    mailChimpServerPrefix:process.env.MAIL_CHIMP_SERVER_PREFIX
+    mailgunKey:process.env.MAILGUN_KEY,
+    mailgunDomain:process.env.MAILGUN_DOMAIN
 
 }
