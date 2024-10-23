@@ -3,12 +3,13 @@ import 'materialize-css/dist/css/materialize.min.css'
 import ReactDOM from "react-dom/client";
 import {Provider} from 'react-redux'
 import {createStore,applyMiddleware} from 'redux'
+import App from "./components/App";
 import {thunk} from 'redux-thunk'
 import reducers from "./reducers";
+//Development Only Axios Helpers
+import axios from 'axios'
+window.axios=axios
 
- 
-// 2) Import App component as usual
-import App from "./components/App";
 const store=createStore(reducers,{},applyMiddleware(thunk))
  
 // 3) Get a reference to the div with ID root
