@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'; // Ensure fetchUser is properly imported
 import Header from './Header';
 import Landing from './Landing'
+import Dashboard from './Dashboard'
+import SurveyNew from './surveys/SurveyNew'
 
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>Survey</h2>;
+
+
+
 
 
 class App extends Component {
@@ -18,18 +21,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className='container'>
+      
         <BrowserRouter>
-          <>
+          <div className='container'>
             <Header />
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/surveys" component={Dashboard} />
               <Route path="/surveys/new" component={SurveyNew} />
             </Switch>
-          </>
+          </div>
         </BrowserRouter>
-      </div>
+      
     );
   }
 }
