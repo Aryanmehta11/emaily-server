@@ -25,10 +25,10 @@ module.exports=app=>{
     await mailer.send();
     await survey.save();
     req.user.credits-=1
-    await req.user.save();
+    const user=await req.user.save();
     res.send(user)
     } catch(err){
-        res.status(422)
+        res.status(422).send(err);
     }
     
 
